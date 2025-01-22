@@ -5,6 +5,7 @@ import ReviewItem from '../ReviewItem/ReviewItem';
 import Cart from '../Cart/Cart';
 import happyImage from '../../images/giphy.gif';
 import { useNavigate } from 'react-router-dom';
+import './Review.css';
 
 
 const Review = () => {

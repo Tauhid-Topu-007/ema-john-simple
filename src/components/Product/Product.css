@@ -1,22 +1,72 @@
-.product{
+/* General product container styles */
+.product {
     display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
     padding-bottom: 5px;
     margin-right: 5px;
 }
-.img{
+
+/* Image container */
+.img {
     margin-right: 25px;
+    flex: 0 0 auto; /* Ensure the image does not stretch */
+    width: 100px; /* Default width for the image container */
 }
-.product-name{
+
+.img img {
+    max-width: 100%;
+    height: auto; /* Ensure the image scales proportionally */
+}
+
+/* Product name link styling */
+.product-name {
     color: blue;
     font-weight: 400;
+    font-size: 1rem;
+    word-break: break-word; /* Handle long names gracefully */
 }
-.main-button{
+
+/* Button styles */
+.main-button {
     background-color: goldenrod;
     width: 8rem;
     height: 2rem;
     border: 1px solid darkgray;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.main-button:hover {
+    background-color: darkorange;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center content horizontally */
+        text-align: center;
+    }
+
+    .img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main-button {
+        width: 100%; /* Button takes the full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-name {
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+
+    .main-button {
+        font-size: 0.8rem; /* Adjust button font size */
+    }
 }
